@@ -29,6 +29,13 @@
         >
           PROFILE
         </nuxt-link>
+        <nuxt-link
+          to="home"
+          tag="a"
+          class="button--cyan"
+        >
+          HOME
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -41,7 +48,7 @@ export default {}
 <style>
 .container {
   margin: 0 auto;
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

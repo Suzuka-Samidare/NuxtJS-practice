@@ -1,0 +1,128 @@
+<template>
+  <div class="profile-container">
+    <div class="sheet">
+      <h1 class="headline">
+        Profile
+      </h1>
+      <div class="divider" />
+      <div class="author-image">
+        <div class="icon">
+          <img src="~/static/Suzuka-Samidare_icon.png" alt="">
+        </div>
+        <h1>Suzuka-Samidare</h1>
+      </div>
+      <div style="margin: 20px; margin-bottom: 60px;">
+        <div class="row">
+          <h3>Name</h3>
+          <div style="margin-left: 20px;">
+            さみだれ すずか
+          </div>
+        </div>
+        <div class="row">
+          <h3>What kind of person?</h3>
+          <div style="margin-left: 20px;">
+            <p>小売業特化型ITソリューション企業で、フロントエンドエンジニアを軸にして働いています。</p>
+            <p>アニメ、ゲーム、車、バンダイナムコのコンテンツが好き</p>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Favorite</h3>
+          <div style="margin-left: 20px;">
+            我那覇響（THE IDOLM@STER）
+          </div>
+        </div>
+      </div>
+      <nuxt-link
+        to="home"
+        tag="a"
+        class="button--grey"
+      >
+        back
+      </nuxt-link>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scope>
+.profile-container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 100px 50px 0;
+  /* background: linear-gradient(#43D4D4, #1768ac); */
+}
+
+h1.headline {
+  font-family: 'Orbitron';
+}
+
+.sheet {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.divider {
+  height: 2px;
+  background-color: black;
+}
+
+.author-image {
+  margin: 32px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.author-image h1 {
+  margin-left: 20px;
+  font-family: 'Orbitron';
+}
+
+.icon {
+  width: 140px;
+  height: 140px;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: #FFFFFF;
+  border-radius: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon img {
+  width: 100px;
+}
+
+@media screen and (max-width: 659px) {
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .icon img {
+    width: 70px;
+  }
+}
+
+.row {
+  margin-bottom: 30px;
+}
+
+.row h3 {
+  font-family: 'Orbitron';
+  margin-bottom: 5px;
+}
+
+.button--grey {
+  margin: 0;
+}
+</style>
