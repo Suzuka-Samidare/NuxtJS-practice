@@ -14,10 +14,10 @@
             <nuxt-link to="profile" tag="div">
               <Button label="Profile" />
             </nuxt-link>
-            <nuxt-link to="/" tag="div">
+            <nuxt-link to="about" tag="div">
               <Button label="About" />
             </nuxt-link>
-            <nuxt-link to="title" tag="div">
+            <nuxt-link to="/" tag="div">
               <Button label="Exit" />
             </nuxt-link>
           </div>
