@@ -11,7 +11,7 @@
           </h1>
         </div>
         <div class="press-info">
-          <h2>*PRESS SPACE KEY</h2>
+          <h2>*{{ pressInfoLabel }}</h2>
         </div>
       </div>
     </div>
@@ -23,11 +23,6 @@
         :figure-color="params.color"
         :style="hexagonStyle(params)"
       />
-    </div> -->
-    <!-- <div>
-      <button class="button--cyan-dark">AAAAA</button>
-      <button class="button--cyan-dark">AAAAA</button>
-      <button class="button--cyan-dark">AAAAA</button>
     </div> -->
   </div>
 </template>
@@ -51,6 +46,22 @@ export default {
         { color: '#3563C8', top: '', bottom: '100px', left: '', right: '180px' },
         { color: '#06bee1', top: '', bottom: '', left: '', right: '240px' }
       ]
+    },
+    pressInfoLabel () {
+      /**
+       * SSRの仕様によって、windowオブジェクトが存在しないので、
+       * process.client変数を用いてアクセスする
+       */
+      if (process.client) {
+        const regexp = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+        if (navigator.userAgent.match(regexp) !== null) {
+          return 'TOUCH SCREEN'
+        } else {
+          return 'PRESS SPACE KEY or CLICK SCREEN'
+        }
+      } else {
+        return 'CLICK SCREEN'
+      }
     }
   },
   methods: {
