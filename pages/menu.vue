@@ -11,13 +11,13 @@
               class="button--cyan-dark"
               style="background-color: #D6D6D6;"
             /> -->
-            <nuxt-link to="profile" tag="div">
+            <nuxt-link to="profile" tag="div" style="margin: 12px 0;">
               <Button label="Profile" />
             </nuxt-link>
-            <nuxt-link to="about" tag="div">
+            <nuxt-link to="about" tag="div" style="margin: 12px 0;">
               <Button label="About" />
             </nuxt-link>
-            <nuxt-link to="/" tag="div">
+            <nuxt-link to="/" tag="div" style="margin: 12px 0;">
               <Button label="Exit" />
             </nuxt-link>
           </div>
@@ -80,7 +80,7 @@ export default {
   height: 100vh;
   width: 100vw;
 }
-.button-group {
+#main-menu .button-group {
   margin: 0 40px;
   max-width: 400px;
   /* min-width: 240px; */

@@ -29,14 +29,14 @@ export default {
   border: 2px solid #FFFFFF;
   border-radius: 2px;
   display: flex;
-  margin: 12px 0;
+  /* margin: 12px 0; */
 }
 
 .button-label {
   color: #FFFFFF;
   background-color: #525252;
   border-right: 2px solid #FFFFFF;
-  padding: 6px 30px;
+  padding: 6px 16px;
   text-align: left;
   text-decoration: none;
   width: calc(100% - var(--button-toggle-width));
