@@ -1,30 +1,30 @@
 <template>
   <div id="common">
-    <div v-show="$route.name !== 'Title'" id="app-bar" :class="activeMenuClass">
+    <div v-show="$route.name !== 'index'" id="app-bar" :class="activeMenuClass">
       <div :class="`bottom-border`">
         <div class="page-info">
           *Mode : {{ toCamelCase($route.name) }}
         </div>
       </div>
     </div>
-    <div v-show="$route.name !== 'Title'" id="bottom-bar" :class="activeMenuClass">
+    <div v-show="$route.name !== 'index'" id="bottom-bar" :class="activeMenuClass">
       <div :class="`top-border`">
         <div class="operation-info">
-          <div class="content">
+          <!-- <div class="content">
             Tab Key : Next
-          </div>
-          <div class="content">
+          </div> -->
+          <!-- <div class="content">
             Shift + Tab key : Prev
-          </div>
-          <div class="content">
+          </div> -->
+          <!-- <div class="content">
             Space Key : O.K.
-          </div>
+          </div> -->
           <!-- <div class="content">
             Move Cursol : Select
-          </div>
-          <div class="content">
-            Click : O.K.
           </div> -->
+          <div class="content">
+            {{ pressKeyLabel }} : O.K.
+          </div>
           <div class="content">
             Please
           </div>
@@ -99,6 +99,22 @@ export default {
       } else {
         return ''
       }
+    },
+    pressKeyLabel () {
+      /**
+       * SSRの仕様によって、windowオブジェクトが存在しないので、
+       * process.client変数を用いてアクセスする
+       */
+      if (process.client) {
+        const regexp = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+        if (navigator.userAgent.match(regexp) !== null) {
+          return 'Touch'
+        } else {
+          return 'Click'
+        }
+      } else {
+        return 'Click'
+      }
     }
   },
   methods: {
@@ -120,13 +136,13 @@ export default {
  */
 html {
   font-family:
-    'Impact',
+    /* 'Impact', */
+    'Helvetica Neue',
     'Source Sans Pro',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
     Roboto,
-    'Helvetica Neue',
     Arial,
     sans-serif;
   font-size: 20px;
@@ -225,16 +241,16 @@ html {
   font-size: 20px;
 }
 .operation-info > .content {
-  flex: 0 0 30%;
+  flex: 0 0 calc(100% - 110px);
   border-left: 3px solid black;
   text-align: center;
 }
-.operation-info > .content:nth-last-of-type(2) {
+/* .operation-info > .content:nth-last-of-type(2) {
   flex: 0 0 30%;
   text-align: center;
-}
+} */
 .operation-info > .content:last-child {
-  flex: 0 0 10%;
+  flex: 0 0 110px;
   color: #F97A10;
   border-left: 3px solid #F97A10;
   border-right: 3px solid black;
