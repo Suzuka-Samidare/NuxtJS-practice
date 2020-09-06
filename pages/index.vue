@@ -108,9 +108,26 @@ h1.title {
   /* z-index: 50; */
 }
 
-@media screen and (max-width: 400px) {
+.press-info {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 339px) {
+  h1.title {
+    font-size: 38px;
+  }
+  .press-info {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 340px) and (max-width: 479px) {
   h1.title {
     font-size: 50px;
+  }
+  .press-info {
+    font-size: 16px;
   }
 }
 
@@ -118,10 +135,5 @@ h1.title {
   h1.title > .br {
     display: none;
   }
-}
-
-.press-info {
-  display: flex;
-  justify-content: center;
 }
 </style>
