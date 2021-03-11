@@ -57,7 +57,8 @@ export default {
         if (navigator.userAgent.match(regexp) !== null) {
           return 'TOUCH SCREEN'
         } else {
-          return 'PRESS SPACE KEY or CLICK SCREEN'
+          // return 'PRESS SPACE KEY or CLICK SCREEN'
+          return 'CLICK SCREEN'
         }
       } else {
         return 'CLICK SCREEN'

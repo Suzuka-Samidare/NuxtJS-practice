@@ -1,44 +1,36 @@
 <template>
-  <div class="container">
+  <div id="about" class="container">
     <div>
       <Logo />
       <h1 class="title">
         nuxtjs-tutorial
       </h1>
-      <div class="links">
-        <!-- <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-        <nuxt-link
-          to="profile"
-          tag="a"
-          class="button--cyan"
-        >
-          PROFILE
-        </nuxt-link>
-        <nuxt-link
-          to="/"
-          tag="a"
-          class="button--cyan"
-        >
-          BACK
-        </nuxt-link> -->
-        <nuxt-link to="menu" tag="div">
-          <Button label="Back" />
-        </nuxt-link>
+      <div style="display: flex; justify-content: center; margin: 15px;">
+        <div class="button-group">
+          <div style="margin: 12px 0;">
+            <a
+              href="https://github.com/Suzuka-Samidare/NuxtJS-practice"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="text-decoration: none;"
+            >
+              <Button label="Jump to github/NuxtJS-practice" />
+            </a>
+          </div>
+          <div style="margin: 12px 0;">
+            <a
+              href="https://github.com/nuxt/nuxt.js"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin: 12px 0; text-decoration: none;"
+            >
+              <Button label="Jump to github/nuxt.js" />
+            </a>
+          </div>
+          <nuxt-link to="menu" tag="div" style="margin: 12px 0;">
+            <Button label="Back" />
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -91,5 +83,12 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+#about .button-group {
+  margin: 0 40px;
+  max-width: 400px;
+  /* min-width: 240px; */
+  width: 100%;
 }
 </style>
